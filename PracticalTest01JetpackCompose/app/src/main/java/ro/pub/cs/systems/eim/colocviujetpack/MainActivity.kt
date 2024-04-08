@@ -74,6 +74,12 @@ class MainActivity : ComponentActivity() {
         super.onPause()
         unregisterReceiver(messageBroadcastReceiver) }
 
+    override fun onDestroy() {
+        val intent = Intent(applicationContext, PracticalTest01Service::class.java)
+        applicationContext.stopService(intent)
+        super.onDestroy()
+    }
+
 }
 
 @Composable
