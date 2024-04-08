@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 
+import java.util.Objects;
+
 import ro.pub.cs.systems.eim.practicaltest01.general.Constants;
 
 public class PracticalTest01Service extends Service {
@@ -26,7 +28,7 @@ public class PracticalTest01Service extends Service {
                     "Channel human readable title",
                     NotificationManager.IMPORTANCE_DEFAULT);
 
-            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
+            ((NotificationManager) Objects.requireNonNull(getSystemService(Context.NOTIFICATION_SERVICE))).createNotificationChannel(channel);
 
             Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setContentTitle("")

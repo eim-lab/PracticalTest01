@@ -12,18 +12,18 @@ import ro.pub.cs.systems.eim.practicaltest01.general.Constants;
 
 public class ProcessingThread extends Thread {
 
-    private Context context = null;
+    private final Context context;
     private boolean isRunning = true;
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
-    private double arithmeticMean;
-    private double geometricMean;
+    private final double arithmeticMean;
+    private final double geometricMean;
 
     public ProcessingThread(Context context, int firstNumber, int secondNumber) {
         this.context = context;
 
-        arithmeticMean = (firstNumber + secondNumber) / 2;
+        arithmeticMean = (double) (firstNumber + secondNumber) / 2;
         geometricMean = Math.sqrt(firstNumber * secondNumber);
     }
 
