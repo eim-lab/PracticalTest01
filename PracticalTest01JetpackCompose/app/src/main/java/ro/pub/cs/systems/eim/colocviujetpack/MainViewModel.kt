@@ -15,4 +15,5 @@ class MainViewModel : ViewModel() {
     fun incrementInput2() {
         input2.intValue += 1
     }
+
 }

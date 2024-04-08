@@ -12,22 +12,19 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import ro.pub.cs.systems.eim.colocviujetpack.ui.theme.ColocviuJetpackTheme
 
 class SecondActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val input1 = intent.getIntExtra(Constants.INPUT_1, 0)
-        val input2 = intent.getIntExtra(Constants.INPUT_2, 0)
+        val input1 = intent.getIntExtra(Constants.INPUT1, 0)
+        val input2 = intent.getIntExtra(Constants.INPUT2, 0)
         val suma = input1 + input2
         setContent {
             ColocviuJetpackTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     Column (
                         verticalArrangement = Arrangement.Center,
