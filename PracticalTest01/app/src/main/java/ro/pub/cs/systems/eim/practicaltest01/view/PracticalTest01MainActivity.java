@@ -73,11 +73,11 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practical_test01_main);
 
-        leftEditText = (EditText)findViewById(R.id.left_edit_text);
-        rightEditText = (EditText)findViewById(R.id.right_edit_text);
-        Button pressMeButton = (Button) findViewById(R.id.press_me_button);
+        leftEditText = findViewById(R.id.left_edit_text);
+        rightEditText = findViewById(R.id.right_edit_text);
+        Button pressMeButton = findViewById(R.id.press_me_button);
         pressMeButton.setOnClickListener(buttonClickListener);
-        Button pressMeTooButton = (Button) findViewById(R.id.press_me_too_button);
+        Button pressMeTooButton = findViewById(R.id.press_me_too_button);
         pressMeTooButton.setOnClickListener(buttonClickListener);
 
         if (savedInstanceState != null) {
@@ -96,7 +96,7 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
             rightEditText.setText(String.valueOf(0));
         }
 
-        Button navigateToSecondaryActivityButton = (Button) findViewById(R.id.navigate_to_secondary_activity_button);
+        Button navigateToSecondaryActivityButton = findViewById(R.id.navigate_to_secondary_activity_button);
         navigateToSecondaryActivityButton.setOnClickListener(buttonClickListener);
 
         for (int index = 0; index < Constants.actionTypes.length; index++) {

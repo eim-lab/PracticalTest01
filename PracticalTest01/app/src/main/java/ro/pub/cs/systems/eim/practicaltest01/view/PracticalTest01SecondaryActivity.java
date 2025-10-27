@@ -18,33 +18,33 @@ public class PracticalTest01SecondaryActivity extends AppCompatActivity {
     private class ButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.ok_button:
-                    setResult(RESULT_OK, null);
-                    break;
-                case R.id.cancel_button:
-                    setResult(RESULT_CANCELED, null);
-                    break;
+            int id = view.getId();
+            if (id == R.id.ok_button) {
+                setResult(RESULT_OK, null);
+            } else if (id == R.id.cancel_button) {
+                setResult(RESULT_CANCELED, null);
             }
+
             finish();
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practical_test01_secondary);
 
-        TextView numberOfClicksTextView = (TextView) findViewById(R.id.number_of_clicks_text_view);
+        TextView numberOfClicksTextView = findViewById(R.id.number_of_clicks_text_view);
         Intent intent = getIntent();
         if (intent != null && Objects.requireNonNull(intent.getExtras()).containsKey(Constants.NUMBER_OF_CLICKS)) {
             int numberOfClicks = intent.getIntExtra(Constants.NUMBER_OF_CLICKS, -1);
             numberOfClicksTextView.setText(String.valueOf(numberOfClicks));
         }
 
-        Button okButton = (Button) findViewById(R.id.ok_button);
+        Button okButton = findViewById(R.id.ok_button);
         okButton.setOnClickListener(buttonClickListener);
-        Button cancelButton = (Button) findViewById(R.id.cancel_button);
+        Button cancelButton = findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(buttonClickListener);
     }
 }
