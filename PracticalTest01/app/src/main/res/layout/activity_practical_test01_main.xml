@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="ro.pub.cs.systems.eim.practicaltest01.view.PracticalTest01MainActivity">
 
     <Button
@@ -12,6 +13,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/navigate_to_secondary_activity"/>
 
     <EditText

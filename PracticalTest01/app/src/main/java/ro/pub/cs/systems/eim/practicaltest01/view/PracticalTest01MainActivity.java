@@ -71,7 +71,7 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practical_test01_main);
+        setContentView(R.layout.activity_practical_test01_main_var01);
 
         leftEditText = findViewById(R.id.left_edit_text);
         rightEditText = findViewById(R.id.right_edit_text);
