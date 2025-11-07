@@ -8,6 +8,7 @@ object Constants {
         const val BROADCAST_RECEIVER_EXTRA = "broadcast_receiver_extra"
 
         const val BROADCAST_RECEIVER_TAG = "[Message]"
+        const val PROCESSING_THREAD_TAG = "[Processing Thread]"
 
         val actionTypes = arrayOf(
                 "ro.pub.cs.systems.eim.practicaltest01.arithmeticmean",

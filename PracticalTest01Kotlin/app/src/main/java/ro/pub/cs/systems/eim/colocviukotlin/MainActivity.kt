@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import ro.pub.cs.systems.eim.colocviukotlin.Constants.INPUT1
 import ro.pub.cs.systems.eim.colocviukotlin.Constants.INPUT2
+import ro.pub.cs.systems.eim.colocviukotlin.PracticalTest01Service
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity() {
             rightNumber++
             input2.setText(rightNumber.toString())
             startServiceIfConditionIsMet(leftNumber, rightNumber)
+        }
+
+        val startServiceButton = findViewById<Button>(R.id.startService)
+        startServiceButton.setOnClickListener {
+            startServiceIfConditionIsMet(Constants.NUMBER_OF_CLICKS_THRESHOLD, 1)
         }
 
         val activityResultsLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -121,6 +127,8 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState.containsKey(INPUT1) && savedInstanceState.containsKey(INPUT2)) {
             input1.setText(savedInstanceState.getString(INPUT1))
             input2.setText(savedInstanceState.getString(INPUT2))
+            leftNumber = Integer.valueOf(input1.text.toString())
+            rightNumber = Integer.valueOf(input2.text.toString())
         }
     }
 }
